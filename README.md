@@ -6,14 +6,19 @@ I put this together very quickly and inelegantly to run Chai-1 instead of AlphaF
 My directory structure is 
 
 ~/dl_binder_design
+
 ~/RFdiffusion
+
 ~/Chai-1
 
 Each module has its own conda enviroment. I start the structure generation from within the examples directory of RFdiffusion, letting RFdiffusion generate backbones in the outputs/ director and then the adding amino acids with Protein_MPNN withing dl_binder_design. The overall directory structure therefore is found within RFdiffusion/outputs for protein "example" as 
 
 example_rf  --> RFdiffusion generated backbones
+
 example_mpnn --> Protein_MPNN candidate sequences/coordinates
+
 example_mpnn_chai --> Chai-1 validated structures from the contents of the example_mpnn directory
+
 example_best --> the best structures sorted by Chai ipTM statistics
 
 A shell script in RFdiffusion/examples called "generate_models.sh" will load in the appropriate conda environment, run RFdiffusion, and then run Protein_MPNN. The output directories will be foudn in ~/RFdiffusion/outputs
